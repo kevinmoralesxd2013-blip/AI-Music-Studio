@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Music Studio</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(135deg,#090919,#17102f,#071d35);
+ color:white;
+ min-height:100vh;
+}
+header{
+ padding:22px;
+ text-align:center;
+ border-bottom:1px solid #ffffff20;
+}
+header h1{color:#b99aff;margin:0}
+main{max-width:750px;margin:35px auto;padding:20px}
+.panel{
+ background:#ffffff0c;
+ border:1px solid #ffffff20;
+ border-radius:20px;
+ padding:22px;
+ box-shadow:0 15px 50px #0005;
+}
+textarea,select,input{
+ width:100%;padding:14px;margin:10px 0 18px;
+ border-radius:10px;border:1px solid #ffffff30;
+ background:#11152b;color:white;font-size:15px;
+}
+textarea{height:130px;resize:vertical}
+button{
+ width:100%;padding:15px;border:0;border-radius:12px;
+ background:linear-gradient(90deg,#8755ff,#d34bff);
+ color:white;font-size:16px;font-weight:bold;
+ cursor:pointer;
+}
+button:disabled{opacity:.5}
+h2{margin-top:0}
+small{color:#aaa}
+#status{margin-top:18px;color:#c9aaff}
+footer{text-align:center;padding:25px;color:#888}
+</style>
+</head>
+<body>
+<header>
+<h1>🎵 AI Music Studio</h1>
+<p>Crea música con inteligencia artificial</p>
+</header>
+
+<main>
+<div class="panel">
+<h2>✨ Crear una canción</h2>
+
+<label>Describe tu canción</label>
+<textarea id="prompt" placeholder="Ejemplo: Reguetón romántico con voz masculina, ritmo pegadizo y sonidos modernos..."></textarea>
+
+<label>Género musical</label>
+<select id="genre">
+<option>Reguetón</option>
+<option>Trap</option>
+<option>Rap</option>
+<option>Pop</option>
+<option>Rock</option>
+<option>Electrónica</option>
+<option>Corridos tumbados</option>
+<option>Lo-fi</option>
+</select>
+
+<label>Tipo de voz</label>
+<select id="voice">
+<option>Masculina</option>
+<option>Femenina</option>
+<option>Instrumental</option>
+</select>
+
+<label>Idioma</label>
+<select id="language">
+<option>Español</option>
+<option>Inglés</option>
+<option>Portugués</option>
+</select>
+
+<label>Duración</label>
+<select id="duration">
+<option value="30">30 segundos</option>
+<option value="60">1 minuto</option>
+<option value="120">2 minutos</option>
+<option value="180">3 minutos</option>
+</select>
+
+<button id="generate">✨ Generar canción</button>
+<p id="status">Tu próximo éxito comienza aquí 🎧</p>
+</div>
+</main>
+
+<footer>AI Music Studio · Creado con creatividad e IA</footer>
+
+<script>
+document.getElementById("generate").addEventListener("click",()=>{
+ const prompt=document.getElementById("prompt").value.trim();
+ const status=document.getElementById("status");
+
+ if(!prompt){
+  status.textContent="⚠️ Primero describe tu canción.";
+  return;
+ }
+
+ status.textContent="🎵 Configuración preparada. Falta conectar el motor de IA musical para generar el audio real.";
+});
+</script>
+</body>
+</html>
